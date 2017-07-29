@@ -33,7 +33,7 @@ class Search extends Component {
           .map(image => (
             <div key={image.date}>
               <div className="ui image">
-                <img alt={image['alt-text']} src={image.comic_img_url} />
+                <img alt={image['alt-text']} src={image.comic_img_url.replace("http","https")} />
               </div>
             </div>
           ))
