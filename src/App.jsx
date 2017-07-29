@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Index from './Index';
 
-const FourOhFour = () => <h1>404</h1>;
+const FourOhFour = () => <h1>Oops, no Calvin and Hobbes for you right now.</h1>;
 
 const App = () => (
 	<BrowserRouter>
