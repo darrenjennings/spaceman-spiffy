@@ -13,8 +13,6 @@ class Search extends Component {
   };
 
   render() {
-    let a = this.state.searchTerm.toUpperCase();
-
     return (
       <div id="search">
         <div className="ui fluid massive icon input">
