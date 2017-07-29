@@ -1,0 +1,12 @@
+[ignore]
+.*/node_modules/fbjs/.*
+.*/node_modules/config-chain/test/broken.json
+.*/node_modules/npmconf/test/.*
+.*/node_modules/findup/test/fixture/.*
+.*/node_modules/styled-components
+
+[include]
+
+[libs]
+
+[options]

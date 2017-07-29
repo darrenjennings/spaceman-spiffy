@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search renders correctly 1`] = `
+<div
+  id="search"
+>
+  <div
+    className="ui fluid massive icon input"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+      value=""
+    />
+    <i
+      className="search icon"
+    />
+  </div>
+</div>
+`;
