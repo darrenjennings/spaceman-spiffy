@@ -25,11 +25,19 @@ def filterbyvalue(seq, value):
     return ""
 
 
+def is_jsonable(x):
+    try:
+        json.dumps(x)
+        return True
+    except:
+        return False
+
+
 class chSpier(scrapy.Spider):
     name = "ch_spider"
     # CH starts at 1985/11/18
     start_date = date(1985, 11, 18)
-    end_date = date(1986, 11, 18)
+    end_date = date(1996, 1, 1)
     start_urls = []
     for single_date in daterange(start_date, end_date):
         start_urls.append(
@@ -50,17 +58,6 @@ class chSpier(scrapy.Spider):
         comic_url = response.css(comic_url_selector).extract_first()
         comic_alt_text = response.css(comic_alt_text_selector).extract_first()
 
-        # Get the tags on the page
-        #tags = []
-        # for tag in response.css(COMIC_TAGS_SELECTOR).extract():
-        #    tags.append(tag.split('#')[1])
-        # tags_comma_separated = ','.join([str(i) for i in tags])
-
-        # Save the file and get the text from it
-        img_file_path = "static/img/" + filename + ".jpg"
-        urllib.urlretrieve(comic_url, img_file_path)
-        comic_image_text = ImageText(img_file_path)
-
         # Load the existing json
         # if it exists.
         data = {'images': []}
@@ -69,14 +66,30 @@ class chSpier(scrapy.Spider):
             with open(json_file, "r") as jsonFile:
                 data = json.load(jsonFile)
 
-        item = {'date': filename, 'gocomics_url': response.url, 'alt-text': json.dumps(comic_alt_text), 'comic_img_url': comic_url,
-                'image_path': img_file_path,
-                'image_txt': json.dumps(comic_image_text.text)}
+        item = {'date': filename,
+                'gocomics_url': response.url,
+                'alt-text': json.dumps(comic_alt_text),
+                'comic_img_url': comic_url
+                }
 
-        #item = filterbyvalue(data['images'], item['date'])
-        # print "############################"
-        # print item
-        # if not item:
+        try:
+            found = False
+            for i in data['images']:
+                if i['date'] == item['date']:
+                    found = True
+                    return
+
+            # if not found:
+                # Save the file and get the text from it
+                #img_file_path = "static/img/" + filename + ".jpg"
+                #urllib.urlretrieve(comic_url, img_file_path)
+                #comic_image_text = ImageText(img_file_path)
+                #item['image_txt'] = json.dumps(comic_image_text.text)
+                #item['image_path'] = img_file_path
+                # data['images'].append(item)
+        except Exception:
+            return
+
         data['images'].append(item)
 
         with open(json_file, 'w') as outfile:
