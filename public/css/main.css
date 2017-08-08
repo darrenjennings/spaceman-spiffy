@@ -3,5 +3,22 @@
 }
 
 #search img {
-  margin-top: 2em;
+  margin-top: 50px;
+}
+#search > div:nth-child(5) > div > div > img {
+	margin-top: 5px;
+}
+
+.SingleDatePicker { padding: 10px 0 10px; }
+.SingleDatePicker, .SingleDatePicker .DateInput, .SingleDatePicker input { width: 100%; }
+
+
+.padding10 {
+	padding: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+	.main.container {
+		margin-top: 2em;
+	}
 }

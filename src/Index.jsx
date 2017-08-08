@@ -1,12 +1,23 @@
 // @flow
+import 'react-dates/lib/css/_datepicker.css';
+import React, { Component } from 'react';
 
-import React from 'react';
+import '../public/css/main.css';
 import Search from './Search';
 
-const Index = () => (
-	<div className="ui main container text">
-		<Search />
-	</div>
-);
+class Index extends Component {
+	state = {
+		searchTerm: '',
+		focused: false
+	};
+
+	render() {
+		return (
+			<div className="ui main container text">
+				<Search debounce={250} />
+			</div>
+		);
+	}
+}
 
 export default Index;
