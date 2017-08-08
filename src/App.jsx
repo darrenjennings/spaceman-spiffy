@@ -11,7 +11,7 @@ const App = () => (
 	<BrowserRouter>
 		<div className="app">
 			<Switch>
-				<Route exact path="/spaceman-spiffy/" component={Index} />
+				<Route exact path="/spaceman-spiffy" component={Index} />
 				<Route component={FourOhFour} />
 			</Switch>
 		</div>

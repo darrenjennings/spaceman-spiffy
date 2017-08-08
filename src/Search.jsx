@@ -102,22 +102,6 @@ class Search extends Component {
           />
           <i className="search icon" />
         </div>
-<<<<<<< HEAD
-        {data.images
-          .filter(
-            image =>
-              `${image['alt-text']} ${image.image_txt}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >=
-                0 && this.state.searchTerm !== ''
-          )
-          .map(image => (
-            <div key={image.date}>
-              <div className="ui image">
-                <img alt={image['alt-text']} src={image.comic_img_url.replace("http","https")} />
-              </div>
-            </div>
-          ))
-          .slice(0, 4)}
-=======
         <div
           className="padding10"
           style={{ display: this.state.useDate || this.state.searchTerm === '' ? 'none' : '' }}
@@ -129,8 +113,6 @@ class Search extends Component {
         {this.state.images.length > 0
           ? this.state.images.map(image => <ComicImage key={image.date} image={image} />)
           : ''}
-
->>>>>>> master
       </div>
     );
   }
