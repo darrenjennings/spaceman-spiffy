@@ -11,6 +11,10 @@ class Index extends Component {
 		focused: false
 	};
 
+	shouldComponentUpdate() {
+		return false;
+	}
+
 	render() {
 		return (
 			<div className="ui main container text">

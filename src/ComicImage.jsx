@@ -1,15 +1,29 @@
+// @flow
+
 import React from 'react';
 
-const ComicImage = (
-	props: { image: Comic } // eslint-disable-line flowtype/no-types-missing-file-annotation
-) => (
-	<div>
-		<div>
-			<div className="ui image">
-				<img alt={props.image['alt-text']} title={props.image.date} src={props.image.comic_img_url} />
+class ComicImage extends React.Component {
+	shouldComponentUpdate() {
+		return false;
+	}
+
+	props: { image: Comic }; // eslint-disable-line flowtype/no-types-missing-file-annotation
+
+	render() {
+		return (
+			<div>
+				<div>
+					<div className="ui image">
+						<img
+							alt={this.props.image['alt-text']}
+							title={this.props.image.date}
+							src={this.props.image.comic_img_url}
+						/>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
-);
+		);
+	}
+}
 
 export default ComicImage;
