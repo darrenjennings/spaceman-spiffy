@@ -11,10 +11,14 @@ class Index extends Component {
 		focused: false
 	};
 
+	shouldComponentUpdate() {
+		return false;
+	}
+
 	render() {
 		return (
 			<div className="ui main container text">
-				<Search debounce={250} />
+				<Search debounce={1250} />
 			</div>
 		);
 	}

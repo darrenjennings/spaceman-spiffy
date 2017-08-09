@@ -96,6 +96,7 @@ class Search extends Component {
         <div className="ui fluid massive icon input" style={{ display: !this.state.useDate ? '' : 'none' }}>
           <input
             type="text"
+            id="search__input"
             placeholder="Search"
             value={this.state.searchTerm}
             onChange={this.handleSearchTermChange}
