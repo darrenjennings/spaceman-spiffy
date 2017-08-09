@@ -14,7 +14,7 @@ const config = {
   output: {
     path: path.join(__dirname, 'public'),
     filename: '[hash].js',
-    publicPath: '/public/'
+    publicPath: '/spaceman-spiffy/public/'
   },
   devServer: {
     hot: true,
