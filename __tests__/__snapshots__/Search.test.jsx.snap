@@ -5,9 +5,113 @@ exports[`Search renders correctly 1`] = `
   id="search"
 >
   <div
-    className="ui fluid massive icon input"
+    className="ui toggle checkbox padding10"
   >
     <input
+      className="hidden"
+      id="use_date"
+      name="use_date"
+      onChange={[Function]}
+      tabIndex="0"
+      type="checkbox"
+      value="off"
+    />
+    <label
+      htmlFor="use_date"
+    >
+      Filter By Date
+    </label>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <SingleDatePicker
+      anchorDirection="left"
+      customCloseIcon={null}
+      customInputIcon={null}
+      date={"1985-11-18T08:00:00.000Z"}
+      daySize={39}
+      disabled={false}
+      displayFormat={[Function]}
+      enableOutsideDays={false}
+      firstDayOfWeek={null}
+      focused={false}
+      hideKeyboardShortcutsPanel={false}
+      horizontalMargin={0}
+      id="date"
+      initialVisibleMonth={null}
+      isDayBlocked={[Function]}
+      isDayHighlighted={[Function]}
+      isOutsideRange={[Function]}
+      isRTL={false}
+      keepOpenOnDateSelect={false}
+      monthFormat="MMMM YYYY"
+      navNext={null}
+      navPrev={null}
+      numberOfMonths={1}
+      onClose={[Function]}
+      onDateChange={[Function]}
+      onFocusChange={[Function]}
+      onNextMonthClick={[Function]}
+      onPrevMonthClick={[Function]}
+      orientation="horizontal"
+      phrases={
+        Object {
+          "chooseAvailableDate": [Function],
+          "clearDate": "Clear Date",
+          "closeDatePicker": "Close",
+          "dateIsUnavailable": [Function],
+          "enterKey": "Enter key",
+          "escape": "Escape key",
+          "hideKeyboardShortcutsPanel": "Close the shortcuts panel",
+          "homeEnd": "Home and end keys",
+          "jumpToNextMonth": "Move forward to switch to the next month",
+          "jumpToPrevMonth": "Move backward to switch to the previous month",
+          "keyboardNavigationInstructions": "Press the down arrow key to interact with the calendar and
+          select a date. Press the question mark key to get the keyboard shortcuts for changing dates.",
+          "keyboardShortcuts": "Keyboard Shortcuts",
+          "leftArrowRightArrow": "Right and left arrow keys",
+          "moveFocusByOneDay": "Move backward (left) and forward (right) by one day",
+          "moveFocusByOneMonth": "Switch months",
+          "moveFocusByOneWeek": "Move backward (up) and forward (down) by one week",
+          "moveFocustoStartAndEndOfWeek": "Go to the first or last day of a week",
+          "openThisPanel": "Open this panel",
+          "pageUpPageDown": "page up and page down keys",
+          "questionMark": "Question mark",
+          "returnFocusToInput": "Return to the date input field",
+          "selectFocusedDate": "Select the date in focus",
+          "showKeyboardShortcutsPanel": "Open the keyboard shortcuts panel",
+          "upArrowDownArrow": "up and down arrow keys",
+        }
+      }
+      placeholder="Date"
+      readOnly={false}
+      renderCalendarInfo={null}
+      renderDay={null}
+      renderMonth={null}
+      reopenPickerOnClearDate={false}
+      required={false}
+      screenReaderInputMessage=""
+      showClearDate={false}
+      showDefaultInputIcon={false}
+      withFullScreenPortal={false}
+      withPortal={false}
+    />
+  </div>
+  <div
+    className="ui fluid massive icon input"
+    style={
+      Object {
+        "display": "",
+      }
+    }
+  >
+    <input
+      id="search__input"
       onChange={[Function]}
       placeholder="Search"
       type="text"
@@ -16,6 +120,20 @@ exports[`Search renders correctly 1`] = `
     <i
       className="search icon"
     />
+  </div>
+  <div
+    className="padding10"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <em>
+      Displaying 
+       Results with current search term 
+      ""
+    </em>
   </div>
 </div>
 `;

@@ -18,7 +18,7 @@ class Index extends Component {
 	render() {
 		return (
 			<div className="ui main container text">
-				<Search debounce={250} />
+				<Search debounce={1250} />
 			</div>
 		);
 	}
