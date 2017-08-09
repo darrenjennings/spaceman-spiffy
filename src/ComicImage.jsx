@@ -17,7 +17,7 @@ class ComicImage extends React.Component {
 						<img
 							alt={this.props.image['alt-text']}
 							title={this.props.image.date}
-							src={this.props.image.comic_img_url}
+							src={this.props.image.comic_img_url.replace('http:', 'https:')}
 						/>
 					</div>
 				</div>
