@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   context: __dirname,
@@ -12,7 +13,7 @@ const config = {
   devtool: 'cheap-eval-source-map',
   output: {
     path: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
+    filename: '[hash].js',
     publicPath: '/public/'
   },
   devServer: {
@@ -28,7 +29,7 @@ const config = {
     reasons: true,
     chunks: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin()],
+  plugins: [new webpack.NamedModulesPlugin()],
   module: {
     rules: [
       {
@@ -50,10 +51,21 @@ const config = {
   }
 };
 
+const plugins = [
+  new HtmlWebpackPlugin({
+    title: 'Calvin and Hobbes Search',
+    template: 'src/index.ejs',
+    filename: '../index.html'
+  })
+];
+
 if (process.env.NODE_ENV === 'production') {
   config.entry = './src/ClientApp.jsx';
   config.devtool = false;
-  config.plugins = [];
+  config.plugins = plugins;
+} else {
+  plugins.push(new webpack.HotModuleReplacementPlugin());
+  config.plugins = plugins;
 }
 
 module.exports = config;
