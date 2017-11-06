@@ -33,11 +33,10 @@ I made this for fun. I wouldn't recommend submitting PR's, just gazing longingly
 
 ## Authors
 
-* [Darren Jennings](twitter)
+* [Darren Jennings](https://www.twitter.com/darrenjennings)
 
 ## Acknowledgments
 
 * I built this as a fun project while going through Brian Holt's Frontend master's "Complete Intro to React, v3 (feat. Redux, Router & Flow)" course https://frontendmasters.com/courses/react/
 
 [logo]: readme_banner.gif "The days are just packed, eh?"
-[twitter]: https://www.twitter.com/darrenjennings
